@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: spring-petclinic-rest
+  name: spring-petclinic-rest-recreate
+spec:
+  ports:
+  - port: 2325
+    protocol: TCP
+    targetPort: 2325
+  selector:
+    app: spring-petclinic-rest
+  type: LoadBalancer
